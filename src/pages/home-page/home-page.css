@@ -1,0 +1,106 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css");
+
+.page {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "content content";
+  grid-template-columns: auto;
+  grid-template-rows: 7rem 1fr;
+  min-height: 100vh;
+  color: var(--LIGHT-BLACK);
+}
+
+.page main {
+  grid-area: content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 1rem;
+  width: 60vw;
+  margin: auto;
+}
+
+.card--vertical {
+  max-width: 17rem;
+}
+
+.card--horizontal {
+  max-width: 37rem;
+}
+
+.font-small {
+  font-size: 1rem;
+}
+
+
+.page--center {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  row-gap: 1.8rem;
+}
+
+.categories .image-container {
+  width: 23rem;
+  height: 15rem;
+}
+
+.categories .badge {
+  position: relative;
+}
+
+.categories .badge span {
+  top: 50%;
+  left: 26%;
+  border: none;
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: var(--WHITE);
+}
+
+.collections {
+  margin-bottom: 1rem;
+}
+
+.collection .card__body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.collection.card--horizontal .card__body {
+  min-width: 23rem;
+  max-width: 23px;
+  padding: 2rem;
+}
+
+.collection.card--horizontal .card__image {
+  padding: 2rem;
+  min-width: 16rem;
+}
+
+.trending .card__body {
+  padding: 1.5px;
+}
+
+.page--center h2 {
+  text-transform: uppercase;
+  color: var(--LIGHTER-GREY);
+  letter-spacing: 0.15em;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.header nav ul li button a{
+color: var(--BLACK);
+}
+
+#sign-up-btn, #sign-in-btn {
+  margin-right: 1rem;
+}
