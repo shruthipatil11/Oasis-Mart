@@ -1,14 +1,15 @@
-import {uiLogo} from '../../pages/index';
+import {uiLogo} from '../../assets/images';
+import {Link} from 'react-router-dom';
 
- const Header = () => {
+const Header = () => {
     return (
         <header className="header">
         <nav>
           <ul className="navbar">
             <li>
-              <a href="./src/app/product-listing/product-listing.html">
+            <Link to="/product-listing">
                 <img src={uiLogo} alt="project icon" />
-              </a>
+              </Link>
               <p>Oasis Mart</p>
             </li>
             <li className="search-box">

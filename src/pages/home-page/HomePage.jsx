@@ -1,29 +1,33 @@
 import { useState, useEffect } from "react";
-import { bags, footWear, tshirt, watch, westernWear } from "../index";
-import "./home-page.css";
 import axios from "axios";
-import Header from "../../components/header/Header";
-import Categories from "./Categories";
+import "./home-page.css";
+import {Category,Header,useDataFromServer} from "../../components";
+import {tshirt} from '../../assets/images';
 
-
-const ProductListing = () => {
-  const [categories, setCategories] = useState([]);
+const HomePage = () => {
+  const {state,dispatch} = useDataFromServer();
 
   useEffect(async () => {
     try {
       const response = await axios.get("/api/categories");
-      setCategories(response.data.categories);
+      dispatch({type:'saveData',payload:response.data.categories});
     } catch (error) {
-      console.error(error);
+      console.error(error,"couldn't fetch the featured categories");
     }
   }, []);
 
   return (
     <div className="page homepage">
       <Header />
-
+      {state.loading && <div className="loader"><i class="fas fa-spinner"></i></div>}
       <div className="page--center">
-       <Categories categories={categories}/>
+
+      <div className="categories">  
+      <ul className="d-flex-wrap">
+        {state.resData.map(category => 
+       <li key = {category.id} ><Category category={category}/> </li>) }
+       </ul>
+       </div>
 
         <h2>TRENDING NOW</h2>
         <div className="d-flex-wrap trending">
@@ -144,4 +148,4 @@ const ProductListing = () => {
     </div>
   );
 };
-export default ProductListing;
+export default HomePage;

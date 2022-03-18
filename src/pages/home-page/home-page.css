@@ -1,4 +1,4 @@
-@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css");
+/* @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"); */
 
 .page {
   display: grid;
@@ -9,6 +9,7 @@
   grid-template-rows: 7rem 1fr;
   min-height: 100vh;
   color: var(--LIGHT-BLACK);
+  position: relative;
 }
 
 .page main {
@@ -104,3 +105,13 @@ color: var(--BLACK);
 #sign-up-btn, #sign-in-btn {
   margin-right: 1rem;
 }
+
+
+.loader {
+  position: absolute;
+    top: 30%;
+    left: 50%;
+    z-index: 1;
+    font-size: 4.5rem;
+}
+
