@@ -7,17 +7,15 @@ import { tshirt } from "../../assets/images";
 const HomePage = () => {
   const { state, dispatch } = useDataFromServer();
 
-  const fetchData = async () => {
-    try {
-      const response = await axios.get("/api/categories");
-      dispatch({ type: "saveData", payload: response.data.categories });
-    } catch (error) {
-      console.error(error, "couldn't fetch the featured categories");
-    }
-  };
-
   useEffect(() => {
-    fetchData();
+    (async () => {
+      try {
+        const response = await axios.get("/api/categories");
+        dispatch({ type: "saveData", payload: response.data.categories });
+      } catch (error) {
+        console.error(error, "couldn't fetch the featured categories");
+      }
+    })();
   }, []);
 
   return (
