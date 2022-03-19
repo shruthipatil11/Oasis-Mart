@@ -1,43 +1,49 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import axios from "axios";
 import "./home-page.css";
-import {Category,Header,useDataFromServer} from "../../components";
-import {tshirt} from '../../assets/images';
+import { Category, Header, useDataFromServer } from "../../components";
+import { tshirt } from "../../assets/images";
 
 const HomePage = () => {
-  const {state,dispatch} = useDataFromServer();
+  const { state, dispatch } = useDataFromServer();
 
-  useEffect(async () => {
+  const fetchData = async () => {
     try {
       const response = await axios.get("/api/categories");
-      dispatch({type:'saveData',payload:response.data.categories});
+      dispatch({ type: "saveData", payload: response.data.categories });
     } catch (error) {
-      console.error(error,"couldn't fetch the featured categories");
+      console.error(error, "couldn't fetch the featured categories");
     }
+  };
+
+  useEffect(() => {
+    fetchData();
   }, []);
 
   return (
     <div className="page homepage">
       <Header />
-      {state.loading && <div className="loader"><i class="fas fa-spinner"></i></div>}
+      {state.loading && (
+        <div className="loader">
+          <i class="fas fa-spinner"></i>
+        </div>
+      )}
       <div className="page--center">
-
-      <div className="categories">  
-      <ul className="d-flex-wrap">
-        {state.resData.map(category => 
-       <li key = {category.id} ><Category category={category}/> </li>) }
-       </ul>
-       </div>
+        <div className="categories">
+          <ul className="d-flex-wrap">
+            {state.resData.map((category) => (
+              <li key={category.id}>
+                <Category category={category} />{" "}
+              </li>
+            ))}
+          </ul>
+        </div>
 
         <h2>TRENDING NOW</h2>
         <div className="d-flex-wrap trending">
           <div className="card card__badge card--vertical">
             <figure className="card__image badge">
-              <img
-                className="image--responsive"
-                src={tshirt}
-                alt="product image"
-              />
+              <img className="image--responsive" src={tshirt} alt="product" />
               <span>New</span>
             </figure>
             <div className="card__body">
@@ -51,11 +57,7 @@ const HomePage = () => {
 
           <div className="card card__badge card--vertical">
             <figure className="card__image badge">
-              <img
-                className="image--responsive"
-                src={tshirt}
-                alt="product image"
-              />
+              <img className="image--responsive" src={tshirt} alt="product" />
               <span>New</span>
             </figure>
             <div className="card__body">
@@ -69,11 +71,7 @@ const HomePage = () => {
 
           <div className="card card__badge card--vertical">
             <figure className="card__image badge">
-              <img
-                className="image--responsive"
-                src={tshirt}
-                alt="product image"
-              />
+              <img className="image--responsive" src={tshirt} alt="product" />
               <span>New</span>
             </figure>
             <div className="card__body">
@@ -85,11 +83,7 @@ const HomePage = () => {
 
           <div className="card card__badge card--vertical">
             <figure className="card__image badge">
-              <img
-                className="image--responsive"
-                src={tshirt}
-                alt="product image"
-              />
+              <img className="image--responsive" src={tshirt} alt="product" />
               <span>New</span>
             </figure>
             <div className="card__body">
@@ -106,11 +100,7 @@ const HomePage = () => {
         <div className="d-flex-wrap collections">
           <div className="card card--horizontal collection">
             <figure className="card__image ">
-              <img
-                className="image--responsive"
-                src={tshirt}
-                alt="product image"
-              />
+              <img className="image--responsive" src={tshirt} alt="product" />
             </figure>
             <div className="card__body">
               <p>New Arrivals</p>
@@ -126,11 +116,7 @@ const HomePage = () => {
 
           <div className="card card--horizontal collection">
             <figure className="card__image ">
-              <img
-                className="image--responsive"
-                src={tshirt}
-                alt="product image"
-              />
+              <img className="image--responsive" src={tshirt} alt="product" />
             </figure>
             <div className="card__body">
               <p>New Arrivals</p>
