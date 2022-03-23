@@ -24,7 +24,7 @@ const ProductListing = () => {
         console.error(error, "couldn't fetch the featured categories");
       }
     })();
-  }, []);
+  }, [dispatch]);
 
   const [filterParamters, dispatchFilter] = useProductFilters(location);
 
