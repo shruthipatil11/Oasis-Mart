@@ -5,7 +5,7 @@ const Sidebar = ({ dispatchFilter, filterParamters }) => {
         <div className="filters--spacing ">
           <h3>Filters</h3>
           <button
-            class="btn btn--primary clear-all"
+            className="btn btn--primary clear-all"
             onClick={() => dispatchFilter({ type: "clearAll" })}
           >
             {" "}

@@ -61,7 +61,7 @@ const ProductListing = () => {
         </div>
         <section className="d-flex-wrap">
           {filteredData.map((product) => {
-            return <ProductCard productdetails={product} />;
+            return <ProductCard key={product._id} productdetails={product} />;
           })}
         </section>
       </main>

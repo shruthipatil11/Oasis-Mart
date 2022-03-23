@@ -18,15 +18,15 @@ const ProductCard = ({ productdetails }) => {
         {latest && <span>New</span>}
         <div className="card__rating">
           <p>{rating}+</p>
-          <i class="far fa-star"></i>
+          <i className="far fa-star"></i>
         </div>
       </figure>
       <div className="card__body">
         <h4 className="font-weight-600">{name.toUpperCase()}</h4>
         <p className="font-small">{description}</p>
-        <div class="price font-small">
+        <div className="price font-small">
           <b>&#x20B9; {price}</b>
-          <p class="price__original">&#x20B9; {originalPrice}</p>
+          <p className="price__original">&#x20B9; {originalPrice}</p>
           <p>{discount}% off</p>
         </div>
         <div className="d-flex card--align-items card--spacing">
