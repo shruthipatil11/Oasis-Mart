@@ -1,6 +1,5 @@
 import "./App.css";
-import logo from "./logo.png";
-import {Routes,Route,Link} from 'react-router-dom';
+import {Routes,Route} from 'react-router-dom';
 import {HomePage,ProductListing} from './pages/index';
 import MockAPI from  './components/mock-man/Mockman';
 
