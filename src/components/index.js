@@ -1,9 +1,11 @@
 import Category from "./category/Category";
 import Header from "./header/Header";
 import MockAPI from "./mock-man/Mockman";
+import Sidebar from "./product/sidebar";
 import { serverDataReducer } from "./reducers/server-data-reducer";
-import { ServerDataContext, useDataFromServer } from "./context/DataFromServer";
-
+import { ServerDataContext, useDataFromServer, } from "./context/DataFromServer";
+import { reducerFunc, useProductFilters } from "./reducers/product-filter-reducer";
+import ProductCard from './product/ProductCard';
 export {
   Category,
   Header,
@@ -11,4 +13,8 @@ export {
   serverDataReducer,
   ServerDataContext,
   useDataFromServer,
+  reducerFunc,
+  useProductFilters,
+  Sidebar,
+  ProductCard
 };
