@@ -1,3 +1,17 @@
 @import url("https://oasis-ui-library.netlify.app/src/app/docs/docs.css");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css");
 @import url("https://unpkg.com/mockman-js@latest/dist/style.css");
+
+.loader {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    z-index: 1;
+    font-size: 4.5rem;
+}
+
+.wishlist {
+        border: none;
+        background: none;
+        font-size: 1.25rem;
+}

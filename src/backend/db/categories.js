@@ -1,5 +1,5 @@
 import { v4 as uuid } from "uuid";
-import { bags } from "../../assets/images";
+import { showpiece, clock2, plant1, wallDecor } from "../../assets/images";
 
 /**
  * Category Database can be added here.
@@ -9,25 +9,25 @@ import { bags } from "../../assets/images";
 export const categories = [
   {
     _id: uuid(),
-    imageName: bags,
-    categoryName: "Showpieces",
+    imageName: showpiece,
+    categoryName: "Show Pieces",
     alt: "Showpieces",
   },
   {
     _id: uuid(),
-    imageName: bags,
-    categoryName: "Wall decor",
+    imageName: wallDecor,
+    categoryName: "Wall Decor",
     alt: "Wall decor",
   },
   {
     _id: uuid(),
-    imageName: bags,
+    imageName: clock2,
     categoryName: "Clocks",
     alt: "Clocks",
   },
   {
     _id: uuid(),
-    imageName: bags,
+    imageName: plant1,
     categoryName: "Plant & Planters",
     alt: "Plant & Planters",
   },
