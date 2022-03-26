@@ -4,7 +4,7 @@ import "./index.css";
 import App from "./App";
 import { makeServer } from "./server";
 import {BrowserRouter as Router} from 'react-router-dom';
-import {ServerDataContext} from './components/context/DataFromServer';
+import {ServerDataContext,CartAndWishlistProvider} from './components';
 
 <link
   rel="stylesheet"
@@ -16,9 +16,11 @@ makeServer();
 ReactDOM.render(
   <React.StrictMode>
     <Router>
+    <CartAndWishlistProvider>
      <ServerDataContext>       
        <App />
-    </ServerDataContext>
+        </ServerDataContext>
+      </CartAndWishlistProvider>
     </Router>
   </React.StrictMode>,
   document.getElementById("root")

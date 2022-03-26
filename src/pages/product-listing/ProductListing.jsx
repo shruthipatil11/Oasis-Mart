@@ -29,7 +29,6 @@ const ProductListing = () => {
   const [filterParamters, dispatchFilter] = useProductFilters(location);
 
   (() => {
-    console.log({ filterParamters });
     filteredData = state.resData
       .filter((product) => product.rating >= filterParamters.rating)
       .filter((product) => {
@@ -50,6 +49,11 @@ const ProductListing = () => {
   return (
     <div className="products">
       <Header />
+      {state.loading && (
+        <div className="loader">
+          <i className="fas fa-spinner"></i>
+        </div>
+      )}
       <Sidebar
         filterParamters={filterParamters}
         dispatchFilter={dispatchFilter}
@@ -61,7 +65,7 @@ const ProductListing = () => {
         </div>
         <section className="d-flex-wrap">
           {filteredData.map((product) => {
-            return <ProductCard key={product._id} productdetails={product} />;
+            return <ProductCard key={product._id} product={product} />;
           })}
         </section>
       </main>

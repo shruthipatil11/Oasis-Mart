@@ -1,4 +1,11 @@
-const ProductCard = ({ productdetails }) => {
+import { useCartAndWishlist, alreadyInCart, alreadyInWishlist } from "../index";
+
+const ProductCard = ({ product }) => {
+  const {
+    state: cartAndWishlistState,
+    updateCart,
+    updateWishlist,
+  } = useCartAndWishlist();
   const {
     image,
     alt,
@@ -9,7 +16,8 @@ const ProductCard = ({ productdetails }) => {
     description,
     originalPrice,
     discount,
-  } = productdetails;
+    _id,
+  } = product;
 
   return (
     <div className="card card__badge card--vertical">
@@ -30,14 +38,25 @@ const ProductCard = ({ productdetails }) => {
           <p>{discount}% off</p>
         </div>
         <div className="d-flex card--align-items card--spacing">
-          <button className="btn btn--primary flex-center">
+          <button
+            className="btn btn--primary flex-center"
+            onClick={() => updateCart(product)}
+          >
             <span>
               {" "}
               <i className="fas fa-shopping-cart"></i>
             </span>
-            Add to Cart
+            {alreadyInCart(cartAndWishlistState.cart, _id)
+              ? "Move toCart"
+              : "Add to Cart"}
           </button>
-          <i className="far fa-heart primary--light-color fa-lg"></i>
+          <button className="wishlist" onClick={() => updateWishlist(product)}>
+            {alreadyInWishlist(cartAndWishlistState.wishlist, _id) ? (
+              <i className="fas fa-heart fa-lg primary--light-color"></i>
+            ) : (
+              <i className="far fa-heart primary--light-color fa-lg"></i>
+            )}
+          </button>
         </div>
       </div>
     </div>
