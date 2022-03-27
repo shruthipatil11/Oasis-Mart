@@ -81,9 +81,57 @@ const CartAndWishlistProvider = ({ children }) => {
     }
   };
 
+  const removeProductFromCart = async (product) => {
+    try {
+      dispatch({ type: "showLoader" });
+
+      const response = await axios.delete(`/api/user/cart/${product._id}`, {
+        headers: { authorization: encodedToken },
+      });
+      dispatch({
+        type: "cart",
+        payload: response.data.cart,
+      });
+    } catch (error) {
+      console.error(error, "couldn't delete from the cart");
+    }
+  };
+
+  const changeProductQuantity = async (id, changeQuantity) => {
+    try {
+      dispatch({ type: "showLoader" });
+
+      const response = await axios.post(
+        `/api/user/cart/${id}`,
+        {
+          action: {
+            type: changeQuantity,
+          },
+        },
+        { headers: { authorization: encodedToken } }
+      );
+      dispatch({
+        type: "cart",
+        payload: response.data.cart,
+      });
+    } catch (error) {
+      console.error(
+        error.message,
+        "couldn't change the product quantity on cart"
+      );
+    }
+  };
+
   return (
     <CartAndWishlistContext.Provider
-      value={{ state, dispatch, updateCart, updateWishlist }}
+      value={{
+        state,
+        dispatch,
+        updateCart,
+        updateWishlist,
+        removeProductFromCart,
+        changeProductQuantity,
+      }}
     >
       {children}
     </CartAndWishlistContext.Provider>

@@ -22,6 +22,8 @@ import {
   useCartAndWishlist
 } from './context/cartAndWhishlistContext';
 import { alreadyInCart, alreadyInWishlist } from './utils/cart-wishlist';
+import CartCard from './cart/CartCard';
+import OrderSummary from './cart/OrderSummary'
 
 export {
   Category,
@@ -38,5 +40,7 @@ export {
   CartAndWishlistProvider,
   useCartAndWishlist,
   alreadyInCart,
-  alreadyInWishlist 
+  alreadyInWishlist,
+  CartCard,
+  OrderSummary
 };

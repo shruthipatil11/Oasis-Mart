@@ -27,7 +27,7 @@ export const products = [
     description: "Set of 3 Astronaut Landing",
     price: 1000,
     originalPrice: 1000,
-    discount: 50,
+    discount: 40,
     latest: false,
     categoryName: "Show Pieces",
     rating: 3,
@@ -42,7 +42,7 @@ export const products = [
     categoryName: "Wall Decor",
     rating: 4,
     originalPrice: 1000,
-    discount: 50,
+    discount: 45,
     description: "Set of 3 Astronaut Landing",
   },
   {
@@ -68,7 +68,7 @@ export const products = [
     categoryName: "Clocks",
     rating: 4,
     originalPrice: 400,
-    discount: 50,
+    discount: 30,
     description: "Set of 3 Astronaut Landing",
   },
   {
@@ -81,7 +81,7 @@ export const products = [
     categoryName: "Clocks",
     rating: 2,
     originalPrice: 1600,
-    discount: 50,
+    discount: 35,
     description: "Set of 3 Astronaut Landing",
   },
   {
@@ -94,7 +94,7 @@ export const products = [
     categoryName: "Plant & Planters",
     rating: 3,
     originalPrice: 1800,
-    discount: 50,
+    discount: 20,
     description: "Artifical flower bunch",
   },
   {
@@ -107,7 +107,7 @@ export const products = [
     categoryName: "Plant & Planters",
     rating: 4,
     originalPrice: 2000,
-    discount: 50,
+    discount: 60,
     description: "Artifical plants with pot",
   },
 ];

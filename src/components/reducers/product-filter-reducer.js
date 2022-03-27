@@ -1,5 +1,6 @@
 import { useReducer } from "react";
 
+const allCategories = ["Show Pieces", "Wall Decor", "Clocks", "Plant & Planters"];
 const reducerFunc = (state, action) => {
   switch (action.type) {
     case "rating":
@@ -17,7 +18,7 @@ const reducerFunc = (state, action) => {
       return { ...state, priceRange: action.payload };
     case "clearAll":
       return {
-        category: ["Show Pieces", "Wall Decor", "Clocks", "Plant & Planters"],
+        category: [...allCategories],
         rating: 1,
         sort: "Low to High",
         priceRange: 1000,
@@ -28,8 +29,11 @@ const reducerFunc = (state, action) => {
 };
 
 const useProductFilters = (location) => {
+  
+  let category =  location?.state?.categoryName ? [location.state.categoryName] : allCategories;
+
   const [filterParamters, dispatchFilter] = useReducer(reducerFunc, {
-    category: [location.state.categoryName],
+    category: category,
     rating: 1,
     sort: "Low to High",
     priceRange: 1000,
