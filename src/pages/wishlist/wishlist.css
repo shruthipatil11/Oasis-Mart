@@ -1,0 +1,39 @@
+
+@import "../../assets/css/styles.css";
+
+.page {
+    display: grid;
+    grid-template-areas:
+      "header header"
+      "content content";
+    grid-template-columns: auto;
+    grid-template-rows: 7rem 1fr;
+    min-height: 100vh;
+    color: var(--LIGHT-BLACK);
+  }
+  
+  .page main {
+    grid-area: content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 1rem;
+    width: 60vw;
+    margin: auto;
+  }
+
+  .card--vertical {
+    max-width: 17rem;
+}
+
+
+  .page--center {
+   width: 100vw;
+   display: flex;
+   flex-direction:column;
+   align-items: center;
+   justify-content: flex-start;
+   row-gap: 1.33rem;
+   padding-left: 2rem;
+  }

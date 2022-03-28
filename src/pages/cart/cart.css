@@ -1,0 +1,87 @@
+@import "../../assets/css/styles.css";
+
+.cart-page {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "content content";
+  grid-template-columns: auto;
+  grid-template-rows: 7rem 1fr;
+  min-height: 100vh;
+  color: var(--LIGHT-BLACK);
+}
+
+.cart-page main {
+  grid-area: content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 1rem;
+  width: 60vw;
+  margin: auto;
+}
+
+hr {
+  margin: 8px 0px;
+}
+
+.card__text {
+  min-height: 20.5rem;
+  max-width: 21rem;
+  padding: 1.5rem;
+  max-height: 23.5rem;
+
+}
+
+.card__text .card__body {
+  text-align: left;
+  flex-wrap: no-wrap;
+}
+
+.card__text .card__body div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cart.card {
+  margin-bottom: 1rem;
+}
+
+.cart.card button {
+  width: 100%;
+}
+
+.card--horizontal {
+  max-height: 18rem;
+}
+
+.card--horizontal .card__quantity button {
+  border: none;
+  background-color: var(--WHITE);
+  width: fit-content;
+}
+
+.card--horizontal .card__quantity {
+  display: flex;
+  column-gap: 10px;
+}
+
+.card--horizontal .card__quantity input {
+  width: 2rem;
+  padding: 2.5px;
+}
+
+.card--horizontal .card__body .price {
+  justify-content: flex-start;
+  column-gap: 10px;
+}
+
+.card--horizontal .card__body {
+  justify-content: flex-start;
+}
+
+.d-flex-col {
+  row-gap: 8px;
+  margin-top: 1rem;
+}

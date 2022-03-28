@@ -1,7 +1,10 @@
 import { uiLogo } from "../../assets/images";
 import { Link } from "react-router-dom";
+import { useCartAndWishlist } from "../../components";
 
 const Header = () => {
+  const { state } = useCartAndWishlist();
+
   return (
     <header className="header">
       <nav>
@@ -19,20 +22,20 @@ const Header = () => {
             </div>
           </li>
           <li>
-            <a href="./src/app/wishlist/wishlist.html">
+            <Link to="/wishlist">
               <figure className="badge badge__count">
                 <i className="far fa-heart fa-2x"></i>
-                <span className="d-flex-center">5</span>
+                <span className="d-flex-center">{state.wishlist.length}</span>
               </figure>
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="./src/app/cart/cart.html">
+            <Link to="/cart">
               <figure className="badge badge__count">
                 <i className="fas fa-shopping-cart fa-2x"></i>
-                <span className="d-flex-center">11</span>
+                <span className="d-flex-center">{state.cart.length}</span>
               </figure>
-            </a>
+            </Link>
           </li>
           <li id="sign-up-btn">
             <button className="btn btn--primary">

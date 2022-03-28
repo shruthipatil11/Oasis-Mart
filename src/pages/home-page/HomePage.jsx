@@ -16,14 +16,14 @@ const HomePage = () => {
         console.error(error, "couldn't fetch the featured categories");
       }
     })();
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className="page homepage">
       <Header />
       {state.loading && (
         <div className="loader">
-          <i class="fas fa-spinner"></i>
+          <i className="fas fa-spinner"></i>
         </div>
       )}
       <div className="page--center">
