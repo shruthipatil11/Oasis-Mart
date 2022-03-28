@@ -1,4 +1,4 @@
-@import url("https://oasis-ui-library.netlify.app/src/app/docs/docs.css");
+@import url("https://melodic-bavarois-7f385f.netlify.app/src/app/docs/docs.css");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css");
 @import url("https://unpkg.com/mockman-js@latest/dist/style.css");
 
@@ -14,4 +14,8 @@
         border: none;
         background: none;
         font-size: 1.25rem;
+}
+
+.no-items-found {
+    width: 100vw;
 }

@@ -34,7 +34,9 @@ const Wishlist = () => {
           </div>
         </div>
       ) : (
-        <h2>No items are added to Wishlist</h2>
+        <h2 class="text--center no-items-found flex-center">
+          No items are added to Wishlist
+        </h2>
       )}
     </div>
   );
